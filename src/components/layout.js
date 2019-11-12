@@ -48,7 +48,7 @@ const TemplateWrapper = ({ children }) => (
       <div className="container__sidebar">
         <div className="sidebar">
           <h6 className="sidebar__title">
-            <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
+            <Link to="/">Adrian Berger | Portfolio</Link>
           </h6>
           <div
             className="sidebar__intro"
@@ -59,9 +59,6 @@ const TemplateWrapper = ({ children }) => (
           <ul className="sidebar__menu">
             <li>
               <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
             </li>
           </ul>
           <p className="sidebar__social">
@@ -80,12 +77,19 @@ const TemplateWrapper = ({ children }) => (
       <div className="container__body">
         <div className="container__mobile-header">
           <div className="mobile-header">
-            <div className="mobile-header__menu">
-              <Link to="#" data-js="toggleSidebar" />
+          <div className="mobile-header__logo">
+              <Link to="#">Adrian Berger | Portfolio</Link>
             </div>
-            <div className="mobile-header__logo">
-              <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
-            </div>
+            
+              <div
+            className="sidebar__intro"
+            style={{textAlign: "end"}}
+            dangerouslySetInnerHTML={{
+              __html: data.datoCmsHome.introTextNode.childMarkdownRemark.html,
+            }}
+          />
+        
+            
           </div>
         </div>
         {children}
